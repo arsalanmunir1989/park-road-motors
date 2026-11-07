@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Park Road Motors – Mobile home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>x-dc{display:none}</style>
+<script src="assets/prm-runtime.js"></script>
+</head>
+<body>
+<x-dc><template>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Saira:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0A0A0A}
+a{color:#D4AF61;text-decoration:none}a:hover{color:#F0D78F}
+select,input,button{font:inherit}
+@keyframes prmUp{from{opacity:0;transform:translate3d(0,32px,0)}to{opacity:1;transform:none}}
+@keyframes prmDown{from{opacity:0;transform:translate3d(0,-100%,0)}to{opacity:1;transform:none}}
+@keyframes prmFade{from{opacity:0}to{opacity:1}}
+@keyframes prmKen{from{transform:scale(1.02)}to{transform:scale(1.14) translate3d(-1.5%,-1%,0)}}
+@keyframes prmTurn{0%,100%{transform:perspective(1200px) rotateY(-12deg)}50%{transform:perspective(1200px) rotateY(12deg)}}
+@keyframes prmSpin{to{transform:rotate(360deg)}}
+@keyframes prmPulse{0%{transform:scale(.9);opacity:.75}100%{transform:scale(1.7);opacity:0}}
+@keyframes prmShine{0%{transform:translate3d(-150%,0,0) skewX(-20deg)}55%,100%{transform:translate3d(380%,0,0) skewX(-20deg)}}
+@keyframes prmDrift{0%{transform:scale(1.1) translate3d(-3%,0,0)}100%{transform:scale(1.16) translate3d(3%,-2%,0)}}
+@keyframes prmMarquee{to{transform:translate3d(-50%,0,0)}}
+@keyframes prmProgress{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes prmFloat{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(0,-10px,0)}}
+@keyframes prmGlow{0%,100%{opacity:.4}50%{opacity:.85}}
+.prm-up{animation:prmUp .9s cubic-bezier(.2,.7,.2,1) both}
+.prm-d1{animation-delay:.12s}.prm-d2{animation-delay:.26s}.prm-d3{animation-delay:.4s}.prm-d4{animation-delay:.55s}
+.prm-down{animation:prmDown .8s cubic-bezier(.2,.7,.2,1) both}
+.prm-swap{animation:prmFade .8s ease both}
+.prm-reveal{animation:prmUp .9s cubic-bezier(.2,.7,.2,1) both}
+@supports (animation-timeline:view()){.prm-reveal{animation-timeline:view();animation-range:entry 5% cover 25%}}
+.prm-ken{position:absolute;inset:0;background:#0A0A0A url(assets/studio.jpg) center/cover no-repeat;animation:prmKen 14s ease-in-out infinite alternate;will-change:transform}
+.prm-studio{background:#0A0A0A url(assets/studio.jpg) center/cover no-repeat}
+.prm-trails{background:#0A0A0A url(assets/trails.jpg) center/cover no-repeat}
+.prm-drift{position:absolute;inset:-8%;background:url(assets/trails.jpg) center/cover no-repeat;animation:prmDrift 26s ease-in-out infinite alternate;will-change:transform}
+.prm-carbon{background-color:#0A0A0A;background-image:linear-gradient(180deg,rgba(10,10,10,.5),rgba(10,10,10,.82)),url(assets/carbon.png);background-size:auto,24px 24px}
+.prm-pattern{background-color:#FFFFFF;background-image:url(assets/pattern.png);background-size:160px 160px}
+.prm-pattern-ivory{background-color:#F7F6F2;background-image:url(assets/pattern.png);background-size:160px 160px}
+.prm-turn{animation:prmTurn 9s ease-in-out infinite;transform-origin:50% 80%;will-change:transform}
+.prm-float{animation:prmFloat 6s ease-in-out infinite}
+.prm-ring{animation:prmSpin 30s linear infinite;transform-origin:50% 50%}
+.prm-ring-rev{animation:prmSpin 46s linear infinite reverse;transform-origin:50% 50%}
+.prm-glow{animation:prmGlow 4s ease-in-out infinite}
+.prm-card{transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s,border-color .5s}
+.prm-card:hover{transform:translate3d(0,-10px,0);box-shadow:0 28px 50px -18px rgba(0,0,0,.4);border-color:#D4AF61!important}
+.prm-media{position:relative;overflow:hidden}
+.prm-img{transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.prm-card:hover .prm-img{transform:scale(1.1) rotate(-2deg)}
+.prm-media::after{content:"";position:absolute;top:0;bottom:0;left:0;width:35%;background:linear-gradient(90deg,transparent,rgba(255,236,190,.3),transparent);transform:translate3d(-150%,0,0) skewX(-20deg);pointer-events:none}
+.prm-card:hover .prm-media::after{animation:prmShine 1.1s ease-out}
+.prm-btn{position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.prm-btn::after{content:"";position:absolute;top:0;bottom:0;left:0;width:40%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);transform:translate3d(-150%,0,0) skewX(-20deg);animation:prmShine 3.8s ease-in-out infinite;pointer-events:none}
+.prm-btn:hover{transform:translate3d(0,-2px,0);box-shadow:0 14px 26px -12px rgba(212,175,97,.8)}
+.prm-ghost{transition:background-color .35s,color .35s,border-color .35s}
+.prm-ghost:hover{background-color:#D4AF61!important;color:#0A0A0A!important;border-color:#D4AF61!important}
+.prm-nav a{position:relative}
+.prm-nav a::after{content:"";position:absolute;left:0;right:0;bottom:6px;height:1px;background:#D4AF61;transform:scaleX(0);transform-origin:right;transition:transform .45s}
+.prm-nav a:hover::after{transform:scaleX(1);transform-origin:left}
+@media (max-width:720px){.prm-nav{justify-content:center!important;padding:8px 12px!important;gap:0 18px!important}.prm-nav>a{order:-1;flex:1 0 100%!important}.prm-nav>a img{height:28px!important}.prm-nav>div{flex:0 0 auto!important;justify-content:center!important;gap:0 18px!important;font-size:11px}.prm-nav>div a{padding:8px 0!important}}
+.prm-brand{transition:transform .45s,border-color .45s,box-shadow .45s}
+.prm-brand:hover{transform:translate3d(0,-6px,0);border-color:#D4AF61!important;box-shadow:0 18px 30px -18px rgba(138,106,31,.6)}
+.prm-brand:hover .prm-initial{animation:prmSpin 1s cubic-bezier(.2,.7,.2,1)}
+.prm-marquee{display:flex;width:max-content;animation:prmMarquee 34s linear infinite}
+.prm-marquee:hover{animation-play-state:paused}
+.prm-progress{transform-origin:left;animation:prmProgress 6s linear both}
+.prm-scrollbar{transform-origin:left;transform:scaleX(0)}
+@supports (animation-timeline:scroll()){.prm-scrollbar{animation:prmProgress linear both;animation-timeline:scroll(root)}}
+.prm-pulse{animation:prmPulse 2.2s ease-out infinite}
+@media (hover:none){.prm-card:hover,.prm-brand:hover{transform:none}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+</style>
+</helmet>
+<div style="width: 390px; min-height: 2600px; box-sizing: border-box; background: #0A0A0A; color: #FFFFFF; font-family: Montserrat, system-ui, sans-serif; font-size: 14px; line-height: 1.6; position: relative">
+
+<header class="prm-down" style="position: sticky; top: 0; z-index: 20; background: rgba(10,10,10,0.96); border-bottom: 1px solid #D4AF61; display: grid; grid-template-columns: 44px 1fr 44px; align-items: center; padding: 10px 14px; gap: 8px">
+<button type="button" onClick="{{toggle}}" aria-label="Open menu" aria-expanded="{{openStr}}" style="width: 44px; height: 44px; border: 0; background: none; color: #FFFFFF; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+<a href="index.html" aria-label="Park Road Motors home" style="display: flex; flex-direction: column; align-items: center; gap: 2px">
+<img src="assets/mark.png" alt="" style="height: 28px; width: auto">
+<span style="font-family: Saira, sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.12em; color: #D4AF61; line-height: 1">PARK ROAD MOTORS</span>
+</a>
+<a href="#" aria-label="Call us" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; color: #D4AF61"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></a>
+</header>
+
+<sc-if value="{{open}}" hint-placeholder-val="{{ false }}">
+<nav aria-label="Mobile" style="position: absolute; top: 65px; left: 0; right: 0; z-index: 19; background: #141414; border-bottom: 1px solid #2B2B2B; padding: 8px 20px 20px; display: flex; flex-direction: column; font-size: 13px; font-weight: 600; letter-spacing: 0.14em">
+<a href="index.html" style="color: #D4AF61; padding: 14px 0; border-bottom: 1px solid #2B2B2B">HOME</a>
+<a href="cars-for-sale.html" style="color: #FFFFFF; padding: 14px 0; border-bottom: 1px solid #2B2B2B">CARS FOR SALE</a>
+<a href="#" style="color: #FFFFFF; padding: 14px 0; border-bottom: 1px solid #2B2B2B">BRANDS</a>
+<a href="#" style="color: #FFFFFF; padding: 14px 0; border-bottom: 1px solid #2B2B2B">ABOUT US</a>
+<a href="#" style="color: #FFFFFF; padding: 14px 0">CONTACT US</a>
+</nav>
+</sc-if>
+
+<section aria-label="Featured vehicles" style="position: relative; height: 560px; overflow: hidden">
+<div class="prm-ken"></div>
+<div aria-hidden="true" style="position: absolute; left: 50%; top: 262px; width: 420px; height: 420px; margin-left: -210px; margin-top: -210px; transform: perspective(900px) rotateX(78deg)">
+<svg class="prm-ring" viewBox="0 0 100 100" width="100%" height="100%" fill="none"><circle cx="50" cy="50" r="47" stroke="#D4AF61" stroke-width="0.5" stroke-dasharray="1 2"/><circle cx="50" cy="50" r="38" stroke="#F0D78F" stroke-opacity="0.45" stroke-width="0.4" stroke-dasharray="8 5"/></svg>
+</div>
+<div style="position: absolute; left: 50%; top: 168px; width: 90%; transform: translateX(-50%)">
+<svg class="prm-turn" aria-hidden="true" viewBox="0 0 240 90" style="display: block; width: 100%" fill="#151515" stroke="#D4AF61" stroke-width="0.9" stroke-linejoin="round"><path d="{{slide.path}}"/><circle cx="60" cy="72" r="13" fill="#0B0B0B"/><circle cx="184" cy="72" r="13" fill="#0B0B0B"/></svg>
+</div>
+<span style="position: absolute; left: 14px; top: 12px; font-size: 9px; letter-spacing: 0.16em; color: #8A8A8A">SLIDE PHOTO</span>
+<sc-for list="{{slides}}" as="sl" hint-placeholder-count="1">
+<sc-if value="{{sl.on}}" hint-placeholder-val="{{ true }}">
+<div style="position: absolute; left: 0; right: 0; top: 40px; text-align: center; padding: 0 20px">
+<p class="prm-up" style="margin: 0 0 6px; font-size: 10px; font-weight: 600; letter-spacing: 0.36em; color: #D4AF61">{{sl.eyebrow}}</p>
+<h1 class="prm-up prm-d1" style="margin: 0; font-weight: 500; font-size: 26px; line-height: 1.15; letter-spacing: 0.05em; text-transform: uppercase">{{sl.title}}</h1>
+<p class="prm-up prm-d2" style="margin: 6px 0 0; font-size: 12px; letter-spacing: 0.1em; color: #E6E6E6">{{sl.priceLine}}</p>
+</div>
+</sc-if>
+</sc-for>
+<form aria-label="Shop cars" class="prm-up prm-d3" style="position: absolute; left: 14px; right: 14px; bottom: 44px; background: #FFFFFF; color: #0A0A0A; border-top: 3px solid #D4AF61; padding: 18px 16px; text-align: center; display: flex; flex-direction: column; gap: 10px">
+<h2 style="margin: 0 0 4px; font-size: 15px; font-weight: 700; letter-spacing: 0.18em; color: #0A0A0A">SHOP CARS</h2>
+<label><span style="position: absolute; left: -9999px">Make</span><select style="width: 100%; height: 48px; background: #FFFFFF; color: #0A0A0A; border: 1px solid #0A0A0A; border-radius: 0; padding: 0 12px; font-weight: 600"><option>Any Make</option></select></label>
+<label><span style="position: absolute; left: -9999px">Model</span><select style="width: 100%; height: 48px; background: #F7F6F2; color: #555555; border: 1px solid #D6D6D6; border-radius: 0; padding: 0 12px; font-weight: 600"><option>Any Model</option></select></label>
+<a href="cars-for-sale.html" style="height: 48px; background: #0A0A0A; color: #D4AF61; font-weight: 700; letter-spacing: 0.18em; font-size: 13px; display: flex; align-items: center; justify-content: center">SEARCH</a>
+</form>
+<div style="position: absolute; left: 0; right: 0; bottom: 18px; display: flex; justify-content: center; gap: 8px">
+<sc-for list="{{dots}}" as="d" hint-placeholder-count="3">
+<button type="button" onClick="{{d.go}}" aria-label="Go to slide {{d.n}}" style="width: {{d.w}}px; height: 4px; border: 0; padding: 0; background: {{d.bg}}; cursor: pointer"></button>
+</sc-for>
+</div>
+</section>
+
+<div aria-label="Brands we stock" style="background-color: #0A0A0A; border-bottom: 1px solid #2B2B2B; overflow: hidden; padding: 14px 0">
+<div class="prm-marquee">
+<sc-for list="{{ticker}}" as="t" hint-placeholder-count="10">
+<span style="display: flex; align-items: center; gap: 24px; padding-right: 24px; font-size: 11px; font-weight: 600; letter-spacing: 0.3em; color: #FFFFFF; white-space: nowrap">{{t}} <span aria-hidden="true" style="color: #D4AF61">◆</span></span>
+</sc-for>
+</div>
+</div>
+<section aria-label="Latest arrivals" class="prm-pattern" style=" color: #0A0A0A; padding: 44px 0 40px">
+<h2 style="margin: 0 0 6px; text-align: center; font-size: 17px; font-weight: 600; letter-spacing: 0.16em; color: #0A0A0A">LATEST ARRIVALS</h2>
+<p style="margin: 0 0 18px; text-align: center; font-size: 11px; color: #8A6A1F; letter-spacing: 0.1em">SWIPE TO SEE MORE →</p>
+<div style="display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 0 20px 6px">
+<sc-for list="{{cars}}" as="c" hint-placeholder-count="4">
+<a href="car-details.html" class="prm-card" style="flex: 0 0 270px; scroll-snap-align: center; background: #FFFFFF; border: 1px solid #E6E6E6; color: #0A0A0A; text-align: center; display: flex; flex-direction: column">
+<div class="prm-studio" style="position: relative; aspect-ratio: 4 / 3; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 12%; box-sizing: border-box">
+<svg aria-hidden="true" viewBox="0 0 240 90" width="80%" fill="#1B1B1E" stroke="#B8913E" stroke-width="1.1" stroke-linejoin="round"><path d="{{c.path}}"/><circle cx="60" cy="72" r="13" fill="#0E0E10"/><circle cx="184" cy="72" r="13" fill="#0E0E10"/></svg>
+<span style="position: absolute; top: 0; left: 0; background: linear-gradient(135deg, #F0D78F 0%, #D4AF61 50%, #B8913E 100%); color: #0A0A0A; font-size: 10px; font-weight: 700; letter-spacing: 0.12em; padding: 5px 9px">{{c.badge}}</span>
+</div>
+<div style="padding: 14px 12px 16px">
+<div style="font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; line-height: 1.35">{{c.make}}<br>{{c.model}}</div>
+<div style="font-size: 11px; color: #555555; margin-top: 6px">{{c.meta}}</div>
+<div style="font-family: Saira, sans-serif; font-size: 20px; font-weight: 700; color: #0A0A0A; margin-top: 8px">{{c.price}}</div>
+</div>
+</a>
+</sc-for>
+</div>
+<div style="text-align: center; margin-top: 22px"><a href="cars-for-sale.html" style="display: inline-block; background: #0A0A0A; color: #FFFFFF; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; padding: 13px 22px">VIEW ALL VEHICLES »</a></div>
+</section>
+
+<section aria-label="Collections" class="prm-reveal" style="padding: 48px 16px 0">
+<h2 style="margin: 0 0 16px; font-size: 22px; font-weight: 500; letter-spacing: 0.06em">OUR COLLECTIONS</h2>
+<div style="background: #141414">
+<div class="prm-trails" style="aspect-ratio: 4 / 3; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 16%; box-sizing: border-box"><svg class="prm-turn" aria-hidden="true" viewBox="0 0 240 90" width="82%" fill="#151515" stroke="#B8913E" stroke-width="0.9" stroke-linejoin="round"><path d="M6 72V46c0-6 4-8 10-9l26-3 18-20c4-3 9-5 15-5h88c10 0 18 5 24 14l14 14c12 2 20 6 20 14v21H6z"/><circle cx="60" cy="72" r="13" fill="#0E0E10"/><circle cx="184" cy="72" r="13" fill="#0E0E10"/></svg></div>
+<div style="padding: 28px 20px 32px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px">
+<h3 style="margin: 0; font-size: 22px; font-weight: 500; letter-spacing: 0.08em">FULL-SIZE SUVS</h3>
+<p style="margin: 0; color: #D0D0D0">Commanding, capable and spacious seven-seat SUVs.</p>
+<a href="cars-for-sale.html" style="background: linear-gradient(135deg, #F0D78F 0%, #D4AF61 50%, #B8913E 100%); color: #0A0A0A; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; padding: 12px 20px">VIEW SUVS »</a>
+</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 8px; font-size: 11px; font-weight: 600; letter-spacing: 0.14em">
+<a href="cars-for-sale.html" style="background: #141414; color: #FFFFFF; padding: 16px 12px; text-align: center">MID-SIZE SUVS</a>
+<a href="cars-for-sale.html" style="background: #141414; color: #FFFFFF; padding: 16px 12px; text-align: center">COMPACT SUVS</a>
+<a href="cars-for-sale.html" style="background: #141414; color: #FFFFFF; padding: 16px 12px; text-align: center">SEDANS</a>
+<a href="cars-for-sale.html" style="background: #141414; color: #FFFFFF; padding: 16px 12px; text-align: center">ALL BRANDS</a>
+</div>
+</section>
+
+<section class="prm-pattern-ivory prm-reveal" style="color: #0A0A0A; padding: 44px 20px; text-align: center; margin-top: 48px">
+<h2 style="margin: 0; font-size: 20px; font-weight: 500; letter-spacing: 0.06em; line-height: 1.25; color: #0A0A0A">PARK ROAD MOTORS,<br>VEHICLE SPECIALISTS</h2>
+<p style="margin: 12px 0 0; color: #444444; font-size: 13px">[ABOUT TEXT — short introduction to the business.]</p>
+</section>
+
+<section class="prm-carbon" style="padding: 40px 16px 48px">
+<div style="background: #141414; padding: 28px 20px; text-align: center; display: flex; flex-direction: column; gap: 12px; align-items: center">
+<h2 style="margin: 0; font-size: 20px; font-weight: 500; letter-spacing: 0.08em">VISIT OUR SHOWROOM</h2>
+<p style="margin: 0; color: #D0D0D0; font-size: 13px">[ADDRESS] · [OPENING HOURS]</p>
+<a href="#" style="width: 100%; box-sizing: border-box; background: linear-gradient(135deg, #F0D78F 0%, #D4AF61 50%, #B8913E 100%); color: #0A0A0A; font-size: 12px; font-weight: 700; letter-spacing: 0.18em; padding: 14px; position: relative; overflow: hidden" class="prm-btn">CALL [PHONE]</a>
+<a href="#" style="width: 100%; box-sizing: border-box; border: 1px solid #FFFFFF; color: #FFFFFF; font-size: 12px; font-weight: 600; letter-spacing: 0.18em; padding: 13px">WHATSAPP</a>
+</div>
+</section>
+
+<footer class="prm-carbon" style="border-top: 1px solid #D4AF61; padding: 32px 20px 40px; display: flex; flex-direction: column; gap: 16px">
+<img src="assets/wordmark.png" alt="Park Road Motors – Vehicle Specialists" style="width: 210px; height: auto">
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; font-size: 11px; font-weight: 600; letter-spacing: 0.14em">
+<a href="index.html" style="color: #FFFFFF; padding: 6px 0">HOME</a><a href="cars-for-sale.html" style="color: #FFFFFF; padding: 6px 0">CARS FOR SALE</a><a href="#" style="color: #FFFFFF; padding: 6px 0">ABOUT US</a><a href="#" style="color: #FFFFFF; padding: 6px 0">CONTACT US</a>
+</div>
+<span style="font-size: 20px; font-weight: 700; color: #FFFFFF">[PHONE]</span>
+<span style="font-size: 11px; color: #9A9A9A">© 2026 Park Road Motors</span>
+</footer>
+</div>
+</template></x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"currency":{"editor":"enum","options":["£","SAR ","$","AED "],"default":"£"},"$preview":{"width":390,"height":2600}}'>
+class Component extends DCLogic {
+  constructor(p) { super(p); this.state = { open: false, slide: 0 }; }
+  componentDidMount() { this.timer = setInterval(() => this.setState({ slide: (this.state.slide + 1) % 3 }), 6000); }
+  componentWillUnmount() { clearInterval(this.timer); }
+  renderVals() {
+    const cur = this.props.currency ?? '£';
+    const full = 'M6 72V46c0-6 4-8 10-9l26-3 18-20c4-3 9-5 15-5h88c10 0 18 5 24 14l14 14c12 2 20 6 20 14v21H6z';
+    const sedan = 'M8 70c0-7 5-11 14-12l40-6c16-12 32-20 56-21h26c22 0 38 9 54 21l26 4c8 1 12 6 12 14v6H8z';
+    const mid = 'M8 72V52c0-6 4-9 10-10l30-4 22-20c5-4 11-6 18-6h62c12 0 22 6 30 16l18 12c12 3 18 8 18 16v16H8z';
+    const compact = 'M12 72V56c0-6 4-10 12-11l30-5 22-18c6-4 12-6 20-6h46c14 0 26 6 36 16l20 10c10 3 16 8 16 16v14H12z';
+    const slidesData = [
+      { eyebrow: 'FEATURED VEHICLE', title: 'Toyota Land Cruiser 300', priceLine: 'GR SPORT · 2023 · ' + cur + '74,950', path: full },
+      { eyebrow: 'JUST ARRIVED', title: 'Mercedes-Benz E 300', priceLine: 'AMG LINE · 2023 · ' + cur + '44,995', path: sedan },
+      { eyebrow: 'TOP SELLER', title: 'BMW X5 xDrive40i', priceLine: 'M SPORT · 2022 · ' + cur + '52,500', path: mid }
+    ];
+    const i = this.state.slide;
+    return {
+      open: this.state.open, openStr: this.state.open ? 'true' : 'false',
+      toggle: () => this.setState({ open: !this.state.open }),
+      slide: slidesData[i], slides: slidesData.map((x, k) => ({ ...x, on: k === i })),
+      ticker: ['TOYOTA', 'BMW', 'MERCEDES-BENZ', 'NISSAN', 'LEXUS', 'TOYOTA', 'BMW', 'MERCEDES-BENZ', 'NISSAN', 'LEXUS'],
+      dots: slidesData.map((_, k) => ({ n: k + 1, go: () => this.setState({ slide: k }), w: k === i ? 32 : 14, bg: k === i ? '#D4AF61' : 'rgba(255,255,255,0.45)' })),
+      cars: [
+        { make: 'Mercedes-Benz', model: 'E 300 AMG Line', meta: '12,800 mi / Petrol / Auto', price: cur + '44,995', badge: 'NEW', path: sedan },
+        { make: 'BMW', model: '530e M Sport', meta: '19,700 mi / PHEV / Auto', price: cur + '36,450', badge: 'NEW', path: sedan },
+        { make: 'Toyota', model: 'RAV4 Hybrid Excel', meta: '6,200 mi / Hybrid / Auto', price: cur + '33,990', badge: 'NEW', path: compact },
+        { make: 'Toyota', model: 'Land Cruiser 300', meta: '18,400 mi / Petrol / Auto', price: cur + '74,950', badge: 'TOP SELLER', path: full }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
